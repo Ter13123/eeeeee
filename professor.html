@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<head>
+    <title> SavvySkill</title>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <a href="index.html" class="logo">
+              <img src="../template/image/icon.png" alt="Logo">
+            </a>
+              <div class="dropdown">
+                <button href="course.html" class="dropbtn">course</button>
+                <div class="dropdown-content">
+                  <div class="sub-dropdown">
+                    <a href="#">Free Course</a>
+                    <a href="allcourse.html">Course</a>
+                    <div class="sub-dropdown-content">
+                      <a href="#">General Subject</a>
+                      <a href="#">Photography</a>
+                      <a href="freecourse.html">Technology</a>
+                      <a href="#">Bussiness</a>
+                      <a href="course.html">Creative</a>
+                      <a href="#">Cooking</a>
+                      <a href="#">Music</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="dropdown">
+                <button class="dropbtn">find an expert</button>
+                <div class="dropdown-content">
+                  <a href="#">Option 1</a>
+                  <a href="#">Option 2</a>
+                  <a href="#">Option 3</a>
+                </div>
+              </div>
+              <div class="dropdown">
+                <a href="board.html">
+                  <button class="dropbtn">Web board</button>
+                  <div class="dropdown-content">
+                    <a href="board.html">Option 1</a>
+                  </div>
+               </div>
+    
+            <div class="search-container">
+              <input type="text" id="search-bar" placeholder="Search...">
+            </div>
+            <div class="cart-icon">
+              <i class="fas fa-shopping-cart"></i>
+              <div class="cart-count" id="cart-count">0</div>
+              <div class="cart-dropdown" id="cart-dropdown"></div>
+            </div>
+            
+            <a href="login.php" class="login-button">Login</a>
+            <a href="signup.html" class="register-button">Register</a>
+            <a href="profile.html" class="profile-link">
+              <div class="profile-icon">
+                <img src="../template/image/icon.jpg" alt="Profile Image">
+              </div>
+            </a>
+        </div>
+      </nav>
+        <div id="overlay">
+          <div class="overlay-content">
+            <div class="box-3">
+              <div class="text"> Course </div>
+              <div class="result">Result</div>
+              <a class="button" href="login.html">Button<span class="arrow"></span></a>
+            </div>
+            <div class="box-3">
+              <div class="text">Course</div>
+              <div class="result">Result</div>
+              <a class="button" href="login.html">Button<span class="arrow"></span></a>
+            </div>
+            <div class="box-3">
+              <div class="text">Course</div>
+              <div class="result">Result</div>
+              <a class="button" href="login.html">Button<span class="arrow"></span></a>
+            </div>
+            <div class="box-3">
+              <div class="text">Course</div>
+              <div class="result">Result</div>
+              <a class="button" href="login.html">Button<span class="arrow"></span></a>
+            </div>
+            <div class="box-3">
+              <div class="text">Course</div>
+              <div class="result">Result</div>
+              <a class="button" href="login.html">Button<span class="arrow"></span></a>
+            </div>
+            <div class="box-3">
+              <div class="text">Course</div>
+              <div class="result">Result</div>
+              <a class="button" href="login.html">Button<span class="arrow"></span></a>
+            </div>
+            <div class="box-3">
+              <div class="text">Course</div>
+              <div class="result">Result</div>
+              <a class="button" href="login.html">Button<span class="arrow"></span></a>
+            </div>
+          </div>
+        </div>
+    <section class="banner-3">
+        
+    </section>
+    <div class="container-5">
+      <h7>ผู้เชี่ยวชาญทั้งหมด</h7>
+      <p7>ผลการค้นหา 3 รายการ</p7>
+      <div class="filter-container">
+        <label for="sort-filter" class="filter-label">Sort by:</label>
+        <select class="filter-select" onchange="sortProducts(this.value)">
+            <option value="">Sort By</option>
+            <option value="asc">Alphabetical (A-Z)</option>
+            <option value="desc">Alphabetical (Z-A)</option>
+        </select>
+      </div>
+    </div>
+  <div class="products">
+      <div class="product">
+        <div class="image-container">
+          <img src="../template/image/pd.png" alt="Product 1">
+        </div>
+        <h3>ผู้เชี่ยวชาญ01</h3>
+        <p>ประวัติผลงาน</p>
+        <button class="add-to-cart" data-product="1" data-price="0" data-description="ทำความรู้จักกับภาษา Python เบื้องต้น">เริ่มปรึกษาเลย</button>
+      </div>
+      <div class="product">
+        <div class="image-container">
+          <img src="../template/image/pd.png" alt="Product 2">
+        </div>
+        <h3>ผู้เชี่ยวชาญ01</h3>
+        <p>ประวัติผลงาน</p>
+        <button class="add-to-cart" data-product="2" data-price="0" data-description="ทำความรู้จักกับภาษา JavaScript เบื้องต้น">เริ่มปรึกษาเลย</button>
+      </div>
+      <div class="product">
+        <div class="image-container">
+          <img src="../template/image/pd.png" alt="Product 3">
+        </div>
+        <h3>ผู้เชี่ยวชาญ01</h3>
+        <p>ประวัติผลงาน</p>
+        <button class="add-to-cart" data-product="3" data-price="650" data-description="เทคนิก sketch ภาพอย่างไรให้สวย" data-image="../template/image/sketch.jpg">เริ่มปรึกษาเลย</button>
+      </div>
+    </div>
+  </div>
+    
+      <footer>
+        <p>&copy; 2023 My Shop. All rights reserved.</p>
+      </footer>
+      <script>
+        // JavaScript code for adding items to the cart, removing items from the cart, updating cart items, calculating total price, handling checkout, and sorting the products
+        var cartItems = [];
+        var cartPrices = {};
+        var cartDescriptions = {};
+        var cartImages = {};
+        var cartIcon = document.querySelector('.cart-icon');
+        var cartCount = document.getElementById('cart-count');
+        var cartDropdown = document.getElementById('cart-dropdown');
+        var sortFilter = document.getElementById('sort-filter');
+        var productsContainer = document.querySelector('.products');
+    
+        function addToCart(productId, price, description, image) {
+      if (!cartItems.includes(productId)) {
+        cartItems.push(productId);
+        cartPrices[productId] = price;
+        cartDescriptions[productId] = description;
+        cartImages[productId] = image;
+        updateCart();
+      }
+    }
+    
+    function removeFromCart(productId) {
+      var index = cartItems.indexOf(productId);
+      if (index > -1) {
+        cartItems.splice(index, 1);
+        delete cartPrices[productId];
+        delete cartDescriptions[productId];
+        delete cartImages[productId];
+        updateCart();
+      }
+    }
+    
+    function updateCart() {
+      cartCount.textContent = cartItems.length;
+
+      if (cartItems.length > 0) {
+        var cartHtml = '';
+
+        cartItems.forEach(function(item) {
+          cartHtml += '<div class="cart-item">';
+          cartHtml += '<img src="' + cartImages[item] + '" alt="Product Image">';
+          cartHtml += '<div>';
+          cartHtml += '<p>Product ' + item + '</p>';
+          cartHtml += '<p>' + cartDescriptions[item] + '</p>';
+          cartHtml += '<p>$' + cartPrices[item] + '</p>';
+          cartHtml += '<button class="remove-btn" onclick="removeFromCart(' + item + ')">Remove</button>';
+          cartHtml += '</div>';
+          cartHtml += '</div>';
+        });
+
+    
+        var totalPrice = Object.values(cartPrices).reduce(function(acc, price) {
+          return acc + parseFloat(price);
+        }, 0);
+
+        cartHtml += '<div class="total-price">Total: $' + totalPrice.toFixed(2) + '</div>';
+        cartHtml += '<button class="checkout-btn">Checkout</button>';
+
+        cartDropdown.innerHTML = cartHtml;
+      } else {
+        cartDropdown.innerHTML = '<p>Your cart is empty.</p>';
+      }
+    }
+    
+        function sortProducts(filter) {
+          var productElements = Array.from(productsContainer.getElementsByClassName('product'));
+          var sortedProducts = productElements.sort(function(a, b) {
+            var priceA = parseFloat(a.getElementsByClassName('price')[0].textContent.slice(1));
+            var priceB = parseFloat(b.getElementsByClassName('price')[0].textContent.slice(1));
+    
+            if (filter === 'low-to-high') {
+              return priceA - priceB;
+            } else if (filter === 'high-to-low') {
+              return priceB - priceA;
+            } else {
+              return 0;
+            }
+          });
+    
+          sortedProducts.forEach(function(product) {
+            productsContainer.appendChild(product);
+          });
+        }
+    
+        var addToCartButtons = document.getElementsByClassName('add-to-cart');
+        for (var i = 0; i < addToCartButtons.length; i++) {
+        addToCartButtons[i].addEventListener('click', function() {
+        var productId = this.getAttribute('data-product');
+        var price = this.getAttribute('data-price');
+        var description = this.getAttribute('data-description');
+        var image = this.getAttribute('data-image');
+        addToCart(productId, price, description, image);
+      });
+    }
+
+    cartIcon.addEventListener('mouseenter', function() {
+      cartDropdown.style.display = 'block';
+    });
+
+    cartIcon.addEventListener('mouseleave', function() {
+      cartDropdown.style.display = 'none';
+    });
+    
+        sortFilter.addEventListener('change', function() {
+          var selectedFilter = this.value;
+          sortProducts(selectedFilter);
+        });
+
+        function sortProducts(sortBy) {
+      var productsContainer = document.querySelector('.products');
+      var products = Array.from(productsContainer.getElementsByClassName('product'));
+      var sortedProducts;
+
+      if (sortBy === 'asc') {
+        sortedProducts = products.sort(function(a, b) {
+          var aTitle = a.querySelector('h3').textContent.toLowerCase();
+          var bTitle = b.querySelector('h3').textContent.toLowerCase();
+          return aTitle.localeCompare(bTitle);
+        });
+      } else if (sortBy === 'desc') {
+        sortedProducts = products.sort(function(a, b) {
+          var aTitle = a.querySelector('h3').textContent.toLowerCase();
+          var bTitle = b.querySelector('h3').textContent.toLowerCase();
+          return bTitle.localeCompare(aTitle);
+        });
+      } else {
+        sortedProducts = products;
+      }
+
+      productsContainer.innerHTML = '';
+      sortedProducts.forEach(function(product) {
+        productsContainer.appendChild(product);
+      });
+    }
+      </script>
+</body>

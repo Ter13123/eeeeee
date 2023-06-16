@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup</title>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
+    <script src="./js/validation.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt&family=Roboto&display=swap" rel="stylesheet">
+    <style>
+    body {
+        background: linear-gradient(-45deg, rgb(132 44 221), rgb(167, 94, 240), rgb(235, 159, 88), rgb(247, 140, 40));
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        height: 100vh;
+    }
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      margin-top: -30px;
+      padding: 20px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+      background-color: white;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    h3 {
+      text-align: center; 
+    }
+
+    .form-group {
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: rgb(132 44 221);
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    select {
+      width: 100%;
+      height: 50px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 14px;
+      box-sizing: border-box;
+      font-size: 20px;
+    }
+
+    .btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .btn-register {
+        display: inline-block;
+        background: rgb(132 44 221);
+        padding: 10px 10px;
+        border: none;
+        border-radius: 8px;
+        color: rgb(253, 253, 253);
+        border: 3px solid rgb(122, 29, 215);
+        background-image: linear-gradient(to right, transparent 50%, rgb(132 44 221) 50%);
+        background-size: 200%;
+        text-align: center;
+        align-items: center;
+        margin-left: 50px;
+        margin-top: 10px;
+        width: 300px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .btn-login:hover,
+    .btn-register:hover {
+      opacity: 0.8;
+      background-color: rgb(99, 0, 198);
+      color: white;
+    }
+
+    .image {
+    text-align: center;
+    z-index: 2;
+  }
+
+  .image img {
+    display: inline-block;
+    margin: 0 auto;
+  }
+
+  .background-image {
+    background-image: url('../template/image/bg.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+    </style>
+</head>
+<body>
+<div class="image">
+  <a href="index.html">
+    <img src="../template/image/icon.png" alt="Image" width="300" height="250">
+  </a>
+</div>
+<div class="container">
+    <h3>ลงทะเบียนเพื่อใช้งาน</h3>
+    <form action="process-signup.php" method="post" id="signup" novalidate>
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Choose a username">
+        </div>
+        <div class="form-group"> 
+            <div>
+                <label for="email">email</label>
+                <input type="email" id="email" name="email" placeholder="Enter Your Email">
+            </div>
+        </div>
+        
+        <div class="form-group"> 
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter Your Password">
+            </div>
+        </div>
+        
+        <div class="form-group"> 
+            <div>
+                <label for="password_confirmation">Repeat password</label>
+                <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirm Your Password">
+            </div>
+        </div>
+
+            <label for="role">Role</label>
+        <div class="form-group"> 
+            <div>
+                <INPUT TYPE="radio" NAME="role" VALUE="student" checked="checked">Student
+                <INPUT TYPE="radio" NAME="role" VALUE="teacher">Teacher
+            </div>
+        </div>
+        
+        <button class="btn btn-register">Sign up</button>
+        <p>Already have an account? <a href="login.php" onclick="toggleForm()">login here</a></p>
+    </form>
+</div>
+    
+</body>
+</html>
+
+
+
+
+
+

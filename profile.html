@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Profile</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+        body {
+        background: linear-gradient(-45deg, rgb(132 44 221), rgb(167, 94, 240), rgb(235, 159, 88), rgb(247, 140, 40));
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        height: 100vh;
+    }
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+  </style>
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <a href="index.html" class="logo">
+              <img src="../template/image/icon.png" alt="Logo">
+            </a>
+              <div class="dropdown">
+                <button href="course.html" class="dropbtn">course</button>
+                <div class="dropdown-content">
+                  <div class="sub-dropdown">
+                    <a href="#">Free Course</a>
+                    <a href="allcourse.html">Course</a>
+                    <div class="sub-dropdown-content">
+                      <a href="#">General Subject</a>
+                      <a href="#">Photography</a>
+                      <a href="freecourse.html">Technology</a>
+                      <a href="#">Bussiness</a>
+                      <a href="course.html">Creative</a>
+                      <a href="#">Cooking</a>
+                      <a href="#">Music</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="dropdown">
+                <button class="dropbtn">find an expert</button>
+                <div class="dropdown-content">
+                  <a href="#">Option 1</a>
+                  <a href="#">Option 2</a>
+                  <a href="#">Option 3</a>
+                </div>
+              </div>
+              <div class="dropdown">
+                <a href="board.html">
+                  <button class="dropbtn">Web board</button>
+                  <div class="dropdown-content">
+                    <a href="board.html">Option 1</a>
+                  </div>
+               </div>
+    
+            <div class="search-container">
+              <input type="text" id="search-bar" placeholder="Search...">
+            </div>
+            <div class="cart-icon">
+              <i class="fas fa-shopping-cart"></i>
+              <div class="cart-count" id="cart-count">0</div>
+              <div class="cart-dropdown" id="cart-dropdown"></div>
+            </div>
+            
+            <a href="login.php" class="login-button">Login</a>
+            <a href="signup.html" class="register-button">Register</a>
+            <a href="profile.html" class="profile-link">
+              <div class="profile-icon">
+                <img src="../template/image/icon.jpg" alt="Profile Image">
+              </div>
+            </a>
+        </div>
+      </nav>
+        <div id="overlay">
+          <div class="overlay-content">
+            <div class="box-3">
+              <div class="text"> Course </div>
+              <div class="result">Result</div>
+              <a class="button" href="login.html">Button<span class="arrow"></span></a>
+            </div>
+            <div class="box-3">
+              <div class="text">Course</div>
+              <div class="result">Result</div>
+              <a class="button" href="login.html">Button<span class="arrow"></span></a>
+            </div>
+            <div class="box-3">
+              <div class="text">Course</div>
+              <div class="result">Result</div>
+              <a class="button" href="login.html">Button<span class="arrow"></span></a>
+            </div>
+            <div class="box-3">
+              <div class="text">Course</div>
+              <div class="result">Result</div>
+              <a class="button" href="login.html">Button<span class="arrow"></span></a>
+            </div>
+            <div class="box-3">
+              <div class="text">Course</div>
+              <div class="result">Result</div>
+              <a class="button" href="login.html">Button<span class="arrow"></span></a>
+            </div>
+            <div class="box-3">
+              <div class="text">Course</div>
+              <div class="result">Result</div>
+              <a class="button" href="login.html">Button<span class="arrow"></span></a>
+            </div>
+            <div class="box-3">
+              <div class="text">Course</div>
+              <div class="result">Result</div>
+              <a class="button" href="login.html">Button<span class="arrow"></span></a>
+            </div>
+          </div>
+        </div>
+    <div class="profile">
+        <div class="avatar">
+            <img src="../template/image/icon.jpg" alt="User Avatar">
+        </div>
+        <div class="info">
+            <p>Email: Softwarelearning101@gmail.com</p>
+            <p>Username: Admin</p>
+            <p>Role: Student</p>
+        </div>
+    </div>
+</body>
+</html>

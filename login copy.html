@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login and Register</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      margin-top: 150px;
+      padding: 20px;
+      border: solid 1px white;
+      border-radius: 10px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      align-items: center;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .btn-register {
+      background-color: #008CBA;
+    }
+
+    .btn-login:hover,
+    .btn-register:hover {
+      opacity: 0.8;
+    }
+  </style>
+  <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
+  <script src="./js/validation.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Login and Register</h2>
+    <div id="login-form">
+      <h3>Login</h3>
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter your username">
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter your password">
+      </div>
+      <button class="btn btn-login" onclick="login()">Login</button>
+    </div>
+    <div id="register-form" style="display: none;">
+      <h3>Register</h3>
+      <div class="form-group">
+        <label for="reg-email">Email:</label>
+        <input type="text" id="reg-email" placeholder="Enter your email">
+      </div>
+      <div class="form-group">
+        <label for="reg-username">Username:</label>
+        <input type="text" id="reg-username" placeholder="Choose a username">
+      </div>
+      <div class="form-group">
+        <label for="reg-password">Password:</label>
+        <input type="password" id="reg-password" placeholder="Choose a password">
+      </div>
+      <div class="form-group">
+        <label for="password_confirmation">Confirm password</label>
+        <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirm Your Password">
+      </div>
+      <div class="form-group">
+        <label for="reg-role">Role:</label>
+        <select id="reg-role">
+          <option value="student">Student</option>
+          <option value="teacher">Teacher</option>
+        </select>
+      </div>
+      <button class="btn btn-register" onclick="register()">Register</button>
+    </div>
+    <p>Don't have an account? <a href="#" onclick="toggleForm()">Register here</a></p>
+  </div>
+
+  <script>
+    function toggleForm() {
+      var loginForm = document.getElementById("login-form");
+      var registerForm = document.getElementById("register-form");
+
+      if (loginForm.style.display === "none") {
+        loginForm.style.display = "block";
+        registerForm.style.display = "none";
+      } else {
+        loginForm.style.display = "none";
+        registerForm.style.display = "block";
+      }
+    }
+
+    function login() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      var role = document.getElementById("role").value;
+
+      // Perform login validation here
+      // You can use JavaScript or make an AJAX request to the server
+
+      // Example validation
+      if (username && password) {
+        alert("Login successful. Welcome, " + username + "!");
+        // Redirect to the appropriate page based on the role
+      } else {
+        alert("Invalid username, password, or role. Please try again.");
+      }
+    }
+
+    function register() {
+      var username = document.getElementById("reg-username").value;
+      var password = document.getElementById("reg-password").value;
+      var role = document.getElementById("reg-role").value;
+
+      // Perform registration validation here
+      // You can use JavaScript or make an AJAX request to the server
+
+      // Example validation
+      if (username && password) {
+        alert("Registration successful. You can now log in.");
+        toggleForm(); // Switch back to the login form after successful registration
+      } else {
+        alert("Registration failed. Please try again.");
+      }
+    }
+  </script>
+</body>
+</html>

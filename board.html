@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Web Board</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+        body {
+        background: linear-gradient(-45deg, rgb(132 44 221), rgb(167, 94, 240), rgb(235, 159, 88), rgb(247, 140, 40));
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        height: 100vh;
+    }
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="navbar">
+        <a href="index.html" class="logo">
+          <img src="../template/image/icon.png" alt="Logo">
+        </a>
+          <div class="dropdown">
+            <button href="course.html" class="dropbtn">course</button>
+            <div class="dropdown-content">
+              <div class="sub-dropdown">
+                <a href="#">Free Course</a>
+                <a href="allcourse.html">Course</a>
+                <div class="sub-dropdown-content">
+                  <a href="#">General Subject</a>
+                  <a href="#">Photography</a>
+                  <a href="freecourse.html">Technology</a>
+                  <a href="#">Bussiness</a>
+                  <a href="course.html">Creative</a>
+                  <a href="#">Cooking</a>
+                  <a href="#">Music</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">find an expert</button>
+            <div class="dropdown-content">
+              <a href="#">Option 1</a>
+              <a href="#">Option 2</a>
+              <a href="#">Option 3</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a href="board.html">
+              <button class="dropbtn">Web board</button>
+              <div class="dropdown-content">
+                <a href="board.html">Option 1</a>
+              </div>
+           </div>
+
+        <div class="search-container">
+          <input type="text" id="search-bar" placeholder="Search...">
+        </div>
+        <div class="cart-icon">
+          <i class="fas fa-shopping-cart"></i>
+          <div class="cart-count" id="cart-count">0</div>
+          <div class="cart-dropdown" id="cart-dropdown"></div>
+        </div>
+        
+        <a href="login.php" class="login-button">Login</a>
+        <a href="signup.html" class="register-button">Register</a>
+        <a href="profile.html" class="profile-link">
+          <div class="profile-icon">
+            <img src="../template/image/icon.jpg" alt="Profile Image">
+          </div>
+        </a>
+    </div>
+  </nav>
+    <div id="overlay">
+      <div class="overlay-content">
+        <div class="box-3">
+          <div class="text"> Course </div>
+          <div class="result">Result</div>
+          <a class="button" href="login.html">Button<span class="arrow"></span></a>
+        </div>
+        <div class="box-3">
+          <div class="text">Course</div>
+          <div class="result">Result</div>
+          <a class="button" href="login.html">Button<span class="arrow"></span></a>
+        </div>
+        <div class="box-3">
+          <div class="text">Course</div>
+          <div class="result">Result</div>
+          <a class="button" href="login.html">Button<span class="arrow"></span></a>
+        </div>
+        <div class="box-3">
+          <div class="text">Course</div>
+          <div class="result">Result</div>
+          <a class="button" href="login.html">Button<span class="arrow"></span></a>
+        </div>
+        <div class="box-3">
+          <div class="text">Course</div>
+          <div class="result">Result</div>
+          <a class="button" href="login.html">Button<span class="arrow"></span></a>
+        </div>
+        <div class="box-3">
+          <div class="text">Course</div>
+          <div class="result">Result</div>
+          <a class="button" href="login.html">Button<span class="arrow"></span></a>
+        </div>
+        <div class="box-3">
+          <div class="text">Course</div>
+          <div class="result">Result</div>
+          <a class="button" href="login.html">Button<span class="arrow"></span></a>
+        </div>
+      </div>
+    </div>
+  <div class="board">
+    <h1>Web Board</h1>
+    <form id="postForm">
+      <input type="text" id="postTitle" placeholder="Post Title" required>
+      <textarea id="postContent" placeholder="Post Content" required></textarea>
+      <input type="file" id="imageInput">
+      <button type="submit">Submit Post</button>
+    </form>
+    <div id="postsContainer"></div>
+  </div>
+
+  <script>
+// Get form and posts container
+const postForm = document.getElementById('postForm');
+const postsContainer = document.getElementById('postsContainer');
+
+// Add event listener to form submission
+postForm.addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission
+
+  // Get input values
+  const titleInput = document.getElementById('postTitle');
+  const contentInput = document.getElementById('postContent');
+  const imageInput = document.getElementById('imageInput');
+  const title = titleInput.value;
+  const content = contentInput.value;
+  const imageFile = imageInput.files[0];
+
+  // Create post element
+  const postElement = document.createElement('div');
+  postElement.classList.add('post-box');
+
+  const titleElement = document.createElement('h2');
+  titleElement.textContent = title;
+
+  const contentElement = document.createElement('p');
+  contentElement.textContent = content;
+
+  postElement.appendChild(titleElement);
+
+  const commentLink = document.createElement('a');
+  commentLink.classList.add('comment-link');
+  commentLink.textContent = 'Comment';
+
+  const commentSection = document.createElement('div');
+  commentSection.classList.add('comment-box');
+  commentSection.style.display = 'none';
+
+  const commentForm = document.createElement('form');
+  const commentInput = document.createElement('input');
+  commentInput.type = 'text';
+  commentInput.placeholder = 'Enter your comment';
+  const commentButton = document.createElement('button');
+  commentButton.type = 'submit';
+  commentButton.textContent = 'Add Comment';
+
+  const commentContainer = document.createElement('ul');
+  commentContainer.classList.add('comment-list');
+
+  commentForm.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    const commentText = commentInput.value;
+
+    const commentItem = document.createElement('li');
+    commentItem.classList.add('comment-item');
+    commentItem.textContent = commentText;
+
+    // Add delete button to comment
+    const deleteCommentButton = document.createElement('button');
+    deleteCommentButton.textContent = 'Delete';
+    deleteCommentButton.classList.add('delete-comment');
+    deleteCommentButton.addEventListener('click', function() {
+      commentItem.remove();
+    });
+
+    commentItem.appendChild(deleteCommentButton);
+
+    commentContainer.appendChild(commentItem);
+
+    commentInput.value = '';
+  });
+
+  commentForm.appendChild(commentInput);
+  commentForm.appendChild(commentButton);
+
+  commentSection.appendChild(commentForm);
+  commentSection.appendChild(commentContainer);
+
+  // Handle image attachment
+  if (imageFile) {
+    const reader = new FileReader();
+
+    reader.addEventListener('load', function() {
+      const imageElement = document.createElement('img');
+      imageElement.src = reader.result;
+      imageElement.classList.add('post-image');
+
+      postElement.appendChild(imageElement);
+      postElement.appendChild(contentElement);
+
+      postElement.appendChild(commentLink);
+      postElement.appendChild(commentSection);
+    });
+
+    reader.readAsDataURL(imageFile);
+  } else {
+    postElement.appendChild(contentElement);
+
+    postElement.appendChild(commentLink);
+    postElement.appendChild(commentSection);
+  }
+
+  // Add delete button to post
+  const deletePostButton = document.createElement('button');
+  deletePostButton.textContent = 'Delete Post';
+  deletePostButton.classList.add('delete-post');
+  deletePostButton.addEventListener('click', function() {
+    postElement.remove();
+  });
+
+  postElement.appendChild(deletePostButton);
+
+  // Insert post at the top of the posts container
+  postsContainer.insertBefore(postElement, postsContainer.firstChild);
+
+  // Add event listener to comment link
+  commentLink.addEventListener('click', function() {
+    if (commentSection.style.display === 'none') {
+      commentSection.style.display = 'block';
+    } else {
+      commentSection.style.display = 'none';
+    }
+  });
+
+  // Clear form inputs
+  titleInput.value = '';
+  contentInput.value = '';
+  imageInput.value = '';
+});
+
+  </script>
+</body>
+
+</html>
