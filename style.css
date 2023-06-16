@@ -474,6 +474,39 @@ nav li:hover > .dropdown-menu {
   display: inline-block;
 }
 
+.dropdown .arrow {
+  content: "";
+  display: inline-block;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #fff;
+  margin-left: 5px;
+  transition: transform 0.3s;
+  transform: rotate(180deg);
+}
+
+.sub-dropdown .subdropdownarrow {
+  content: "";
+  display: inline-block;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #fff;
+  margin-left: 5px;
+  margin-top: 3px;
+  transition: transform 0.3s;
+  transform: rotate(90deg);
+}
+
+/* Rotate subdropdown arrow to right on hover */
+.subdropdown-content:hover .arrow {
+  transform: rotate(0deg);
+}
+
+/* Rotate arrow up on hover */
+.dropdown:hover .arrow {
+  transform: rotate(0deg);
+}
+
 .dropbtn {
   background-color: #272626;;
   color: White;
@@ -494,6 +527,8 @@ nav li:hover > .dropdown-menu {
   min-width: 190px;
   height: 400px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  border-right: 10px;
   z-index: 1;
   animation: slide-down 0.3s ease;
 }
@@ -532,7 +567,8 @@ nav li:hover > .dropdown-menu {
   background-color: #fff;
   min-width: 190px;
   height: 400px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 8px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
   z-index: 1;
   animation: slide-left 0.3s ease;
   left: 100%;
@@ -773,6 +809,24 @@ p7 {
 }
 
 .add-to-cart:hover {
+  background-color: rgb(72, 3, 141);
+  color: white;
+}
+
+.chatbtn {
+  display: inline-block;
+  background: rgb(99, 0, 198);
+  padding: 10px 10px;
+  margin: 10px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  border: 3px solid rgb(99, 0, 198);
+  background-image: linear-gradient(to right, transparent 50%, rgb(99, 0, 198) 50%);
+  background-size: 200%;
+}
+
+.chatbtn:hover {
   background-color: rgb(72, 3, 141);
   color: white;
 }
@@ -1155,5 +1209,95 @@ p {
   margin-bottom: 10px;
 }
 
+.chat-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-top: 50px; /* Optional: Adjust the top margin as needed */
+  margin-bottom: 50px; /* Optional: Adjust the bottom margin as needed */
+}
+
+.chat-header {
+background-color: #f9f9f9;
+padding: 10px;
+border-bottom: 1px solid #ddd;
+}
+
+.chat-body {
+padding: 20px;
+}
+
+.message {
+margin-bottom: 15px;
+position: relative;
+overflow: hidden;
+}
+
+.message .sender {
+font-weight: bold;
+margin-bottom: 5px;
+}
+
+.message .text {
+background-color: #f1f1f1;
+padding: 10px;
+border-radius: 5px;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+.message .actions {
+position: absolute;
+top: 5px;
+right: 5px;
+display: none;
+}
+
+.message:hover .actions {
+display: block;
+}
+
+.message .delete-button {
+padding: 3px;
+background-color: #f44336;
+color: #fff;
+border: none;
+border-radius: 30%;
+font-size: 12px;
+cursor: pointer;
+}
+
+.chat-input {
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-top: 20px;
+padding: 10px;
+background-color: #f9f9f9;
+border-top: 1px solid #ddd;
+}
+
+.chat-input input[type="text"] {
+flex-grow: 1;
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 5px;
+}
+
+.chat-input input[type="submit"] {
+margin-left: 10px;
+width: 100px;
+padding: 10px 0 1;
+background-color: #4caf50;
+color: #fff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-size: 18px;
+}
 
 
