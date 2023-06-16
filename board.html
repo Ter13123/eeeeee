@@ -4,6 +4,7 @@
 <head>
   <title>Web Board</title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   <style>
         body {
         background: linear-gradient(-45deg, rgb(132 44 221), rgb(167, 94, 240), rgb(235, 159, 88), rgb(247, 140, 40));
@@ -33,11 +34,11 @@
           <img src="../template/image/icon.png" alt="Logo">
         </a>
           <div class="dropdown">
-            <button href="course.html" class="dropbtn">course</button>
+            <button href="course.html" class="dropbtn">course <span class="arrow"></span></button>
             <div class="dropdown-content">
               <div class="sub-dropdown">
-                <a href="#">Free Course</a>
-                <a href="allcourse.html">Course</a>
+                <a href="#">Free Course <span class="subdropdownarrow"></span></a>
+                <a href="allcourse.html">Course <span class="subdropdownarrow"></span></a>
                 <div class="sub-dropdown-content">
                   <a href="#">General Subject</a>
                   <a href="#">Photography</a>
@@ -51,18 +52,20 @@
             </div>
           </div>
           <div class="dropdown">
-            <button class="dropbtn">find an expert</button>
-            <div class="dropdown-content">
-              <a href="#">Option 1</a>
-              <a href="#">Option 2</a>
-              <a href="#">Option 3</a>
-            </div>
+            <a href="professor.html">
+              <button class="dropbtn">find an expert</button>
+            </a>
           </div>
           <div class="dropdown">
             <a href="board.html">
-              <button class="dropbtn">Web board</button>
+              <button class="dropbtn">Web board <span class="arrow"></span></button>
               <div class="dropdown-content">
-                <a href="board.html">Option 1</a>
+                <a href="board.html">General Subject</a>
+                <a href="board.html">Photography</a>
+                <a href="board.html">Bussiness</a>
+                <a href="board.html">Technology</a>
+                <a href="board.html">Music</a>
+                <a href="board.html">Creative</a>
               </div>
            </div>
 
@@ -135,6 +138,15 @@
   </div>
 
   <script>
+    document.getElementById("search-bar").addEventListener("focus", function() {
+    document.getElementById("overlay").classList.add("slide-down");
+    document.getElementById("overlay").style.display = "block";
+  });
+
+  document.getElementById("search-bar").addEventListener("blur", function() {
+    document.getElementById("overlay").classList.add("slide-down");
+    document.getElementById("overlay").style.display = "none";
+  });
 // Get form and posts container
 const postForm = document.getElementById('postForm');
 const postsContainer = document.getElementById('postsContainer');
